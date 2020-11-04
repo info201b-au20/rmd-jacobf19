@@ -7,10 +7,14 @@ library(tidyverse)
 national <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv")
 
 # How many cases have occured in the U.S.? `total_cases`
-
+total_cases <- national %>% 
+  filter(date == max(date)) %>% 
+  pull(cases)
 
 # How many deaths have occured in the U.S.? `total_deaths`
-
+total_deaths <- national %>% 
+  filter(date == max(date)) %>% 
+  pull(deaths)
 
 # Run the following code to create a plot of cumulative cases over time
 # (we'll explain the ggplot2 syntax next week)

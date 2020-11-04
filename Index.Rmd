@@ -1,0 +1,14 @@
+---
+title: "COVID Report"
+output: html_document
+---
+```{r include = FALSE}
+source("analysis.R")
+```
+This is my report about COVID-19 from the [NYT data](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv). As of `r Sys.Date()`, there have been `r format(total_cases, big.mark = ',')` cases and `r format(total_deaths, big.mark = ',')` deaths caused by COVID-19 in the US.
+
+Below is a chart showing the cumulative COVID-19 cases over time:
+
+```{r echo = FALSE} 
+cases_plot
+```
